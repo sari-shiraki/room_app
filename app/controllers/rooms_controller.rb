@@ -8,10 +8,13 @@ class RoomsController < ApplicationController
   end
 
   def create
-    if request.post?
-      Room.create(room_params)
+    @room = Room.new(room_params)
+    if @room.save
+      redirect_to '/rooms'
+    else
+      @msg = "入力に問題があります"
+      render 'add'
     end
-    redirect_to '/rooms'
   end
 
   def show

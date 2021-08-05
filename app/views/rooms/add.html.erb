@@ -1,4 +1,5 @@
 <h1>Rooms#add</h1>
+<%= @msg %>
 <%= form_for(@room, url:{controller:'rooms', action:'create'}) do |form| %>
 	<div>
 		<label for="room_name">ルーム名</label>
