@@ -1,0 +1,20 @@
+<h1>Rooms#add</h1>
+<%= form_for(@room, url:{controller:'rooms', action:'create'}) do |form| %>
+	<div>
+		<label for="room_name">ルーム名</label>
+		<%= form.text_field :room_name %>
+	</div>
+	<div>
+		<label for="room_name">ルーム紹介</label>
+		<%= form.text_area :room_introduction %>
+	</div>
+	<div>
+		<label for="price">料金</label>
+		<%= form.text_field :price %>
+	</div>
+	<div>
+		<label for="room_name">住所</label>
+		<%= form.text_field :adress %>
+	</div>
+	<%= form.submit "登録" %>
+<% end %>	
