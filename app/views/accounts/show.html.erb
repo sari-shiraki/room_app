@@ -1,0 +1,9 @@
+<h1>Accounts#show</h1>
+<p>ユーザー名:<%= @account.name %> 
+<p>メールアドレス：<%= @account.email %> 
+<div>
+  <p>投稿したルーム</p>
+  <% @rooms.each do |room| %>
+    <p><%= room.room_name %></p>
+  <% end %>  
+</div>  

@@ -1,4 +1,6 @@
 class RoomsController < ApplicationController
+  before_action :authenticate_account!, only: [:add, :create, :show]
+
   def index
     @rooms = Room.all
   end
@@ -9,6 +11,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
+    @room.person_id = current_account.id
     if @room.save
       redirect_to '/rooms'
     else
