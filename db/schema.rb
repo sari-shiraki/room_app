@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210805070813) do
+ActiveRecord::Schema.define(version: 20210806112341) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 20210805070813) do
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "finish_date"
+    t.integer  "number_of_people"
+    t.integer  "room_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "rooms", force: :cascade do |t|
     t.string   "room_name"
     t.text     "room_introduction"
@@ -33,6 +42,14 @@ ActiveRecord::Schema.define(version: 20210805070813) do
     t.integer  "person_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "nickname"
+    t.integer  "account_id"
+    t.text     "introduction"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

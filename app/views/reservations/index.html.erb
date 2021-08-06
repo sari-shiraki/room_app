@@ -1,0 +1,6 @@
+<h1>Reservations#index</h1>
+<% @reservations.each do |obj| %>
+  <%= obj.start_date %>
+  <%= obj.finish_date %>
+  <%= obj.number_of_people %>
+<% end %>  
