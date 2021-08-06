@@ -7,10 +7,6 @@ Rails.application.routes.draw do
 
   get 'reservations/:id', to: 'reservations#show'
 
-  get 'index/add'
-
-  get 'index/show'
-
   get 'rooms/index'
   get '/rooms', to: 'rooms#index'
 
