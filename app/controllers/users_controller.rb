@@ -14,5 +14,20 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+  end 
+  
+  def update
+    @user = User.find(params[:id])
+    @user = User.update(user_params)
+    if @user.update
+      redireci_to '/users/#{@user.id}'
+    end  
   end  
+  
+  private
+  def user_params
+    params.require(:user).permit(:name, :email)
+  end  
+  
+  
 end

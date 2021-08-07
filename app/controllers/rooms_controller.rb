@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-
+  before_action :authenticate_user!
   def index
     @rooms = Room.all
   end
@@ -11,7 +11,6 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     @room.user_id = current_user.id
-    binding.pry
     if @room.save
       redirect_to '/rooms'
     else
