@@ -4,7 +4,7 @@ class RoomsController < ApplicationController
     @rooms = Room.all
   end
 
-  def add
+  def new
     @room = Room.new
   end
 
