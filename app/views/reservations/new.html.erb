@@ -1,0 +1,7 @@
+<h1>Reservations#new</h1>
+<%= form_for(@reservation, url:{controller: 'reservations', action: 'create'}) do |form| %>
+  <p><%= form.date_field :start_date %></p>
+  <p><%= form.date_field :finish_date %></p>
+  <p><%= form.number_field :number_of_people %></p>
+  <p><%= form.submit "予約" %></p>
+<% end %>  

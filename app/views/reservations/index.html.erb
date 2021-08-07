@@ -1,0 +1,9 @@
+<h1>Reservations#index</h1>
+<p>================================</p>
+<% @reservations.each do |obj| %>
+  <p>開始日：<%= obj.start_date %></p>
+  <p>終了日：<%= obj.finish_date %></p>
+  <p>人数：<%= obj.number_of_people %></p>
+  <p>room_id:<%= obj.room_id %></p>
+  <p>================================</p>
+<% end %> 
