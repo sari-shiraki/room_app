@@ -10,4 +10,8 @@ class UsersController < ApplicationController
     @user = current_user
     @msg = 'account created at: ' + @user.created_at.to_s
   end
+  
+  def show
+    @user = User.find(params[:id])
+  end  
 end
