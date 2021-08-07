@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   
   def index
     @msg = 'this is sample page.'
+    @rooms = Room.all
   end
 
   def login_check

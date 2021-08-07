@@ -10,11 +10,13 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
+    @room.user_id = current_user.id
+    binding.pry
     if @room.save
       redirect_to '/rooms'
     else
       @msg = "入力に問題があります"
-      render 'add'
+      render 'new'
     end
   end
 
