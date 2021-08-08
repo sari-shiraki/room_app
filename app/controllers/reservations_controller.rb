@@ -12,7 +12,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to '/reservations/index'
     else
-      render 'add'
+      render 'new'
     end
   end  
 

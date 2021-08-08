@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
-    @room.user_id = current_user.id
+    @room.user = current_user
     if @room.save
       redirect_to '/rooms'
     else
@@ -25,6 +25,6 @@ class RoomsController < ApplicationController
   
   private
   def room_params
-    params.require(:room).permit(:room_name, :room_introduction, :price, :adress)
+    params.require(:room).permit(:room_name, :room_introduction, :price, :adress, :user_id)
   end
 end
