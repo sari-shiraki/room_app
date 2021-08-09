@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'ransack'
 gem 'bootsnap', require: false
 gem 'pry-rails'
 gem 'devise'

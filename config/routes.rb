@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   
+  get 'homes/index'
+  get '/home', to: 'homes#index'
+  get 'search', to:'homes#search'
+  
   root to: 'users#index'
   
   get 'reservations/index'
