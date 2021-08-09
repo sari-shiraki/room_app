@@ -1,10 +1,8 @@
 class ReservationsController < ApplicationController
+    before_action :authenticate_user!, only: [:index, :create]
+  
   def index
     @reservations = Reservation.all
-  end
-
-  def new
-    
   end
   
   def create
@@ -12,7 +10,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.room = @room
     if @reservation.save
-      redirect_to '/reservations'
+      redirect_to reservations_show_path(@reservation.id)
     else
       render template: 'rooms/show'
     end

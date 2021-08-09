@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/reservations', to:'reservations#index'
 
 
-  get 'reservations/:id', to: 'reservations#show'
+  get 'reservations/:id', to: 'reservations#show', as: 'reservations_show'
 
   get 'rooms/index'
   get '/rooms', to: 'rooms#index'
@@ -27,6 +27,6 @@ Rails.application.routes.draw do
   
   get 'users/login_check'
 
-  get 'users/:id', to: 'users#show'
+  get 'users/:id', to: 'users#show', as: 'users_show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
