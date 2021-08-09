@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   get 'reservations/index'
   get '/reservations', to:'reservations#index'
 
-  get 'reservations/new'
-  post 'reservations/new', to: 'reservations#create'
 
   get 'reservations/:id', to: 'reservations#show'
 
@@ -18,6 +16,7 @@ Rails.application.routes.draw do
   post 'rooms/new', to: 'rooms#create'
 
   get 'rooms/:id', to: 'rooms#show', as: 'room'
+  post 'rooms/:id', to: 'reservations#create'
 
   get 'users/index'
   get '/users', to: 'users#index'

@@ -12,7 +12,7 @@ class RoomsController < ApplicationController
     @room = Room.new(room_params)
     @room.user = current_user
     if @room.save
-      redirect_to '/rooms'
+      redirect_to @room
     else
       @msg = "入力に問題があります"
       render 'new'
@@ -21,10 +21,11 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+    @reservation = Reservation.new
   end
   
   private
   def room_params
-    params.require(:room).permit(:room_name, :room_introduction, :price, :adress, :user_id)
+    params.require(:room).permit(:room_name, :room_introduction, :price, :adress, :user_id, :image)
   end
 end

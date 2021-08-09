@@ -7,5 +7,10 @@
       <p>料金:<%= obj.price %></p>
       <p>住所:<%= obj.adress %></p>
       <p>user_id:<%= obj.user_id %></p>
+      <div>
+        <% if obj.image.attached? %>
+          <%= image_tag obj.image, class:"img" %>
+        <% end %>        
+      </div>
     <p>========================================</p>
 <% end %>

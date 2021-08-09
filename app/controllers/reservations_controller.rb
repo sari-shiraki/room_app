@@ -4,15 +4,17 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    @reservation = Reservation.new
+    
   end
   
   def create
+    @room = Room.find(params[:id])
     @reservation = Reservation.new(reservation_params)
+    @reservation.room = @room
     if @reservation.save
-      redirect_to '/reservations/index'
+      redirect_to '/reservations'
     else
-      render 'new'
+      render template: 'rooms/show'
     end
   end  
 
@@ -22,6 +24,6 @@ class ReservationsController < ApplicationController
   
   private
   def reservation_params
-    params.require(:reservation).permit(:start_date, :finish_date, :number_of_people)
+    params.require(:reservation).permit(:start_date, :finish_date, :number_of_people, :room_id)
   end 
 end

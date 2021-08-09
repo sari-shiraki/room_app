@@ -17,5 +17,9 @@
 			<label for="room_name">住所</label>
 			<%= form.text_field :adress %>
 		</div>
+		<div>
+			<label for="image">画像</label>
+			<%= form.file_field :image %>
+		</div>
 		<%= form.submit "登録" %>
 	<% end %>
