@@ -1,4 +1,10 @@
 <% @results.each do |room| %>
-  <p><%= room.room_name %></p>
-  <p><%= room.adress %></p>
+  <p>-----------------------------------------</p>
+  <p>ルームid：<%= room.id %></p>
+  <p>ルーム名：<%= room.room_name %></p>
+  <p>ルーム紹介：<%= room.room_introduction %></p>
+  <p>料金：<%= room.price %></p>
+  <p>住所：<%= room.adress %></p>
+    <p>-----------------------------------------</p>
+
 <% end %>  
