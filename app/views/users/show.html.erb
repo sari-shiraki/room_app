@@ -14,6 +14,9 @@
     <p>ルーム紹介：<%= room.room_introduction %></p>
     <p>料金：<%= room.price %></p>
     <p>住所：<%= room.adress %></p>
+    <% if room.image.attached? %>
+      <%= image_tag room.image, class:"img" %>
+    <% end %>        
     <p>**************************************</p>
   <% end %>  
   

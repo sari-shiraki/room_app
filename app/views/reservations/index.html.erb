@@ -6,5 +6,16 @@
   <p>終了日：<%= obj.finish_date %></p>
   <p>人数：<%= obj.number_of_people %></p>
   <p>room_id:<%= obj.room_id %></p>
+  <p>予約確定日時:<%= obj.created_at %></p>
+  <p>合計金額:<%= obj.number_of_people * obj.room.price %>円</p>
+  <p>******************************************</p>
+  <p>room_id:<%= obj.room.id %></p>
+  <p>ルーム名:<%= obj.room.room_name %></p>
+  <p>ルーム紹介:<%= obj.room.room_introduction %></p>
+  <p>料金:<%= obj.room.price %>円</p>
+  <p>住所:<%= obj.room.adress %></p>
+  <% if obj.room.image.attached? %>
+    <%= image_tag obj.room.image, class:"img" %>
+  <% end %>        
   <p>================================</p>
 <% end %> 

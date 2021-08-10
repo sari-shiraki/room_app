@@ -14,7 +14,66 @@
  *= require_self
  */
  
- .img {
-     width:200px;
-     height: 200px;
- }
+img {
+  width: 200px;
+  height: 200px;
+}
+
+a {
+  text-decoration: none;
+  color: #333333;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #333333;
+}
+ 
+header {
+ display: flex;
+ background-color: #000000;
+ padding: 10px 0;
+}
+
+
+.search_btn {
+  display: none;
+}
+
+.header_logo > a > img {
+  height: 50px;
+}
+
+.header_search {
+  margin-top: 10px;
+}
+
+.header_user > p {
+  color: #ffffff;
+}
+
+footer {
+  background-color: #000000;
+  padding: 80px 0;
+}
+
+footer > p {
+  color: #ffffff;
+  text-align: center;
+}
+
+.container.pages {
+  margin: 40px auto;
+}
+
+.row.align-items-center.pages {
+  margin-right: -130px;
+  margin-left: -130px;
+  margin-top: 30px;
+  
+}
+
+.col > .room_imgs {
+  width: 300px;
+  height: 200px;
+}

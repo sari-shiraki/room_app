@@ -9,6 +9,33 @@
   </head>
 
   <body>
+    <header>
+      <div class="header_logo">
+        <a href="/"><img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"></a>
+      </div>
+      <div class="header_search">
+        <%= search_form_for @q, url: search_path do |f| %>
+          <%= f.search_field :adress_cont, placeholder:"東京" %>
+          <%= f.search_field :room_name_or_room_introduction_or_price_or_adress_cont, placeholder:"キーワード" %>
+          <%= f.submit '探す',class:"search_btn" %>
+        <% end %> 
+      </div>
+      <div class="header_menus">
+        <% if user_signed_in? %>
+          <%= link_to "ルーム登録", rooms_new_path %>
+          <%= link_to "予約一覧", reservations_path %>
+          <%= link_to "登録済みルーム一覧", users_show_path(current_user) %>
+          <%= link_to "設定", edit_user_registration_path %>
+          <%= link_to " ログアウト", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "ログイン", new_user_session_path %>
+          <%= link_to "新規登録", new_user_registration_path %>
+        <% end %>    
+      </div>
+    </header>
     <%= yield %>
+    <footer>
+      <p>© 2020 POTEPAN.INC.</p>
+    </footer>
   </body>
 </html>

@@ -1,10 +1,22 @@
-<% @results.each do |room| %>
-  <p>-----------------------------------------</p>
-  <p>ルームid：<%= room.id %></p>
-  <p>ルーム名：<%= room.room_name %></p>
-  <p>ルーム紹介：<%= room.room_introduction %></p>
-  <p>料金：<%= room.price %></p>
-  <p>住所：<%= room.adress %></p>
-    <p>-----------------------------------------</p>
+<div class="container pages">
+  <h4>検索結果：</h4>
+  <div class="row align-items-center pages">
+    <% @results.each do |room| %>
+      <%= link_to room_path(room) do %>
+        <div class="col room_content">
+          <% if room.image.attached? %>
+            <%= image_tag room.image, class:"room_imgs" %>
+          <% else %>
+            <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/room01.jpg" %>
+          <% end %> 
+          <div class="room_info">
+            <p><%= room.room_name %></p>
+            <p><%= room.adress %></p>
+            <p>¥<%= room.price %></p>
+          </div>
+        </div>
+      <% end %>  
+    <% end %>  
 
-<% end %>  
+  </div>    
+</div>
