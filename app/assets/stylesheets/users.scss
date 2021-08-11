@@ -1,3 +1,30 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sign_field {
+  width: 500px;
+  box-shadow: 0 0 8px gray;
+  padding: 50px;
+}
+
+.field.sign_form {
+  margin-top: 20px;
+}
+
+.sign_field {
+  text-align: center;
+}
+
+.sign_form input {
+  width: 280px;
+  height: 40px;
+}
+
+.sign_field > p {
+  margin-top: 10px;
+}
+
+.sign_field > p > a {
+  color: #4b8fe2;
+}
