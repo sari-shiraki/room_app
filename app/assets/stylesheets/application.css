@@ -71,12 +71,17 @@ footer > p {
   margin: 40px auto;
 }
 
-.row.align-items-center.pages {
+.pages.width {
+  margin-right: -100px;
+  margin-left: -100px;
+  margin-top: 30px;
+}
+
+.pages.width.search {
   margin-right: -130px;
   margin-left: -130px;
-  margin-top: 30px;
-  
 }
+
 
 .col > .room_imgs {
   width: 300px;

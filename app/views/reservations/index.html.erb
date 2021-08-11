@@ -1,21 +1,51 @@
-<h1>Reservations#index</h1>
-<p>================================</p>
-<% @reservations.each do |obj| %>
-  <p>id：<%= obj.id %></p>
-  <p>開始日：<%= obj.start_date %></p>
-  <p>終了日：<%= obj.finish_date %></p>
-  <p>人数：<%= obj.number_of_people %></p>
-  <p>room_id:<%= obj.room_id %></p>
-  <p>予約確定日時:<%= obj.created_at %></p>
-  <p>合計金額:<%= obj.number_of_people * obj.room.price %>円</p>
-  <p>******************************************</p>
-  <p>room_id:<%= obj.room.id %></p>
-  <p>ルーム名:<%= obj.room.room_name %></p>
-  <p>ルーム紹介:<%= obj.room.room_introduction %></p>
-  <p>料金:<%= obj.room.price %>円</p>
-  <p>住所:<%= obj.room.adress %></p>
-  <% if obj.room.image.attached? %>
-    <%= image_tag obj.room.image, class:"img" %>
-  <% end %>        
-  <p>================================</p>
-<% end %> 
+<div class="container pages">
+  <div class="pages width">
+    <table class="table table-striped width">
+        <thead>
+          <tr>
+            <th scope="col">ルーム画像</th>
+            <th scope="col">ルーム名</th>
+            <th class="room_introduction" scope="col">ルーム紹介</th>
+            <th scope="col">合計料金</th>
+            <th scope="col">開始日</th>
+            <th scope="col">終了日</th>
+            <th scope="col">予定確定日時</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @reservations.each do |obj| %>
+            <tr>
+              <td>
+                <%= link_to room_path(obj.room.id) do %>
+                  <% if obj.room.image.attached? %>
+                    <%= image_tag obj.room.image, class:"reservations_room_img" %>
+                  <% end %> 
+                <% end %>  
+              </td>
+              <td>
+                <%= link_to room_path(obj.room.id) do %>
+                  <p><%= obj.room.room_name %></p>
+                <% end %>  
+              </td>
+              <td class="room_reservation_info">
+                <p><%= obj.room.room_introduction %></p>
+              </td>
+              <td class="room_reservation_info">
+                <p>¥<%= obj.number_of_people * obj.room.price %><p>
+              </td>
+              <td class="room_reservation_info">
+                <p><%= obj.start_date %><p>
+              </td>
+              <td class="room_reservation_info">
+                <p><%= obj.finish_date %><p>
+              </td>
+              <td class="room_reservation_info">
+                <p><%= obj.created_at %><p>
+              </td>
+            </tr>
+          <% end %> 
+        </tbody>
+    </table>
+  </div>
+  
+</div>
