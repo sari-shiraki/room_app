@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*ルーム作成*/
+
 .col-sm-2.side_bar {
   border-right: 1px solid;
 }  
@@ -51,3 +53,48 @@
   font-weight: bold;
 }
 
+/*ルーム詳細*/
+
+.room_img {
+  width: 100%;
+  height: auto;
+}
+
+.room_user_img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+.room_about.row {
+  margin-top: 30px;
+}
+
+.room_about_page .col-8 > p {
+  border-top: solid 1px #eaedef;
+  border-bottom: solid 1px #eaedef;
+  padding: 20px 0;
+  margin-top: 10px;
+}
+
+.room_about .col-10 > p:first-child {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.room_about_page .col-4 .reservation_form_field {
+  border: 1px solid #eaedef;
+  padding: 10px;
+}
+
+.reservation_form {
+  padding-top: 10px;
+}
+
+.reservation_form input {
+  width: 100%;
+}
+
+.reservation_form_field > p {
+  font-size: 24px;
+}

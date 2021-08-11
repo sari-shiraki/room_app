@@ -29,7 +29,9 @@
           <%= link_to " ログアウト", destroy_user_session_path, method: :delete %>
           <%= current_user.name %>  
           <% if current_user.image.attached? %>
-            <%= image_tag current_user.image, class:"header_user_img" %>
+            <%= image_tag current_user.image, class:"header_user_img", alt:"プロフィール画像" %>
+          <% else %>
+              <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon.jpg", class:"header_user_img", alt:"プロフィール画像"  %>
           <% end %>  
         <% else %>
           <%= link_to "ログイン", new_user_session_path %>
