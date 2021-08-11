@@ -19,6 +19,11 @@ img {
   height: 200px;
 }
 
+.header_user_img {
+  width: 30px;
+  height: 30px;
+}
+
 a {
   text-decoration: none;
   color: #333333;
