@@ -1,25 +1,55 @@
-<h1>Rooms#add</h1>
-<%= @msg %>
-	<%= form_for(@room, url:{controller:'rooms', action:'create'}) do |form| %>
-		<div>
-			<label for="room_name">ルーム名</label>
-			<%= form.text_field :room_name %>
-		</div>
-		<div>
-			<label for="room_name">ルーム紹介</label>
-			<%= form.text_area :room_introduction %>
-		</div>
-		<div>
-			<label for="price">料金</label>
-			<%= form.text_field :price %>
-		</div>
-		<div>
-			<label for="room_name">住所</label>
-			<%= form.text_field :adress %>
-		</div>
-		<div>
-			<label for="image">画像</label>
-			<%= form.file_field :image %>
-		</div>
-		<%= form.submit "登録" %>
-	<% end %>
+<div class="row">
+  <div class="col-sm-2 side_bar">
+  	<%= link_to "基本情報", rooms_new_path, class:"side_bar_contents" %>
+  </div>
+  <div class="col-sm-10 pages">
+  	<div class="container input_form_field">
+			<%= @msg %>
+			<%= form_for(@room, url:{controller:'rooms', action:'create'}) do |form| %>
+				<div class="input_form">
+					<div class="row under_line">
+  					<h3 class="col-sm-4">ルーム情報登録</h3>
+					</div>
+					<div class="row under_line">
+						<div class="col-sm-4">
+							<label for="room_name">ルーム名</label>
+							<span class="btn btn-danger btn-sm disabled">必須</span>
+						</div>
+						<%= form.text_field :room_name, class:"col-sm-8", placeholder:"ルーム名を入力" %>
+					</div>
+					<div class="row under_line">
+						<div class="col-sm-4">
+							<label for="room_name">ルーム紹介</label>
+							<span class="btn btn-danger btn-sm disabled">必須</span>
+						</div>	
+							<%= form.text_area :room_introduction, class:"col-sm-8 input_info", placeholder:"ルーム説明を入力" %>
+					</div>
+					<div class="row under_line">
+						<div class="col-sm-4">
+							<label for="price">料金</label>
+							<span class="btn btn-danger btn-sm disabled">必須</span>
+						</div>
+							<%= form.text_field :price, class:"col-sm-8", placeholder:"一日あたりの料金を入力" %>
+					</div>
+					<div class="row under_line">
+						<div class="col-sm-4">
+							<label for="room_name">住所</label>
+							<span class="btn btn-danger btn-sm disabled">必須</span>
+						</div>
+							<%= form.text_field :adress, class:"col-sm-8", placeholder:"住所を入力" %>
+					</div>
+					<div class="row under_line">
+						<div class="col-sm-4">
+							<label for="image">画像</label>
+							<span class="btn btn-danger btn-sm disabled">必須</span>
+						</div>
+							<%= form.file_field :image %>
+					</div>
+					<%= form.submit "登録",class:"btn btn-primary input_submit col-sm-4" %>
+				</div>
+			<% end %>
+  	</div>
+  </div>
+</div>	
+		
+		
