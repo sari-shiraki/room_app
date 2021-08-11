@@ -23,7 +23,7 @@
       <div class="header_menus">
         <% if user_signed_in? %>
           <%= link_to "ルーム登録", rooms_new_path %>
-          <%= link_to "予約一覧", reservations_path %>
+          <%= link_to "予約済みルーム一覧", reservations_path %>
           <%= link_to "登録済みルーム一覧", users_show_path(current_user) %>
           <%= link_to "設定", edit_user_registration_path %>
           <%= link_to " ログアウト", destroy_user_session_path, method: :delete %>

@@ -1,26 +1,43 @@
-<div>
-  <p>============================</p>
-  <h2>ユーザー</h2>
-  <p><%= @user.name %></p>
-  <p><%= @user.email %></p>
-  <% if @user.image.attached? %>
-    <%= image_tag @user.image %>
-  <% end %>  
-    <p>============================</p>
+<div class="container pages">
+  <h4>登録済みルーム一覧</h4>
+  <table class="table table-striped width">
+      <thead>
+        <tr>
+          <th scope="col">ルーム画像</th>
+          <th scope="col">ルーム名</th>
+          <th class="room_introduction" scope="col">ルーム紹介</th>
+          <th scope="col">料金</th>
+          <th scope="col">作成日</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @rooms.each do |room| %>
+          <tr>
+            <td>
+              <%= link_to room_path(room.id) do %>
+                <% if room.image.attached? %>
+                  <%= image_tag room.image, class:"img" %>
+                <% end %>        
+              <% end %>  
+            </td>
+            <td>
+              <%= link_to room_path(room.id) do %>
+                <p><%= room.room_name%></p>
+              <% end %>  
+            </td>
+            <td class="room_reservation_info">
+              <p><%= room.room_introduction %></p>
+            </td>
+            <td class="room_reservation_info">
+              <p>¥<%= room.price %><p>
+            </td>
+            <td class="room_reservation_info">
+              <p><%= room.created_at %><p>
+            </td>
+          </tr>
+        <% end %> 
+      </tbody>
+  </table>
 </div>
-<div>
-  <p>**************************************</p>
-  <h2>投稿ルーム</h2>
-  <% @rooms.each do |room| %>
-    <p>ルームid：<%= room.id %></p>
-    <p>ルーム名：<%= room.room_name%></p>
-    <p>ルーム紹介：<%= room.room_introduction %></p>
-    <p>料金：<%= room.price %></p>
-    <p>住所：<%= room.adress %></p>
-    <% if room.image.attached? %>
-      <%= image_tag room.image, class:"img" %>
-    <% end %>        
-    <p>**************************************</p>
-  <% end %>  
-  
-</div>
+
+

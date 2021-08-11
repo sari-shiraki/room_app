@@ -19,9 +19,8 @@ img {
   height: 200px;
 }
 
-.header_user_img {
-  width: 30px;
-  height: 30px;
+table {
+  margin-top: 30px;
 }
 
 a {
@@ -40,6 +39,10 @@ header {
  padding: 10px 0;
 }
 
+.header_user_img {
+  width: 30px;
+  height: 30px;
+}
 
 .search_btn {
   display: none;
