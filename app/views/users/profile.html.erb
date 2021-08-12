@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-sm-2 side_bar">
+  	<%= link_to "アカウント", users_account_path, class:"side_bar_black pages" %>
+  	<%= link_to "プロフィール", users_profile_path, class:"side_bar_contents" %>
+  </div>
+  <div class="col-sm-10 pages">
+  	<div class="container input_form_field">
+      <%= form_for(@user, url:{controller:'users', action:'update'}) do |form| %>
+  			<div class="input_form">
+  				<div class="row under_line">
+  					<h3 class="col-sm-4">プロフィール</h3>
+  				</div>
+  				<div class="row under_line">
+            <% if current_user.image.attached? %>
+              <%= image_tag current_user.image, class:"profile_img" %>
+            <% else %> 
+              <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon.jpg" %>
+            <% end %>  
+  				</div>
+  				<div class="row under_line">
+  					<div class="col-sm-4">
+  						<label for="image">アイコン画像</label>
+  						<span class="btn btn-danger btn-sm disabled">必須</span>
+  					</div>
+  					<%= form.file_field :image, class:"col-sm-8" %>
+  				</div>
+  				<div class="row under_line">
+  					<div class="col-sm-4">
+  						<label for="name">名前</label>
+  						<span class="btn btn-danger btn-sm disabled">必須</span>
+  					</div>
+  					<%= form.text_field :name, class:"col-sm-8" %>
+  				</div>
+  				<div class="row under_line">
+  					<div class="col-sm-4">
+  						<label for="image">自己紹介</label>
+  						<span class="btn btn-danger btn-sm disabled">必須</span>
+  					</div>
+  					<%= form.text_area :introduction, class:"col-sm-8 input_info" %>
+  				</div>
+  				<%= form.submit "更新", class:"btn btn-primary input_submit col-sm-4" %>
+  			</div>	
+      <% end %>  
+  	</div>
+  </div>
+</div>	

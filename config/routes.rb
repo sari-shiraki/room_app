@@ -27,8 +27,11 @@ Rails.application.routes.draw do
   get 'users/index'
   get '/users', to: 'users#index'
   
-  get 'users/login_check'
+  get 'users/profile'
+  patch 'users/profile', to: 'users#update'
+  
+  get 'users/account'
 
-  get 'users/:id', to: 'users#show', as: 'users_show'
+  get 'users/rooms', to: 'users#show', as: 'users_show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

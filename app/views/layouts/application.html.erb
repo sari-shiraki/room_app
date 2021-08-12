@@ -25,17 +25,17 @@
           <%= link_to "ルーム登録", rooms_new_path %>
           <%= link_to "予約済みルーム一覧", reservations_path %>
           <%= link_to "登録済みルーム一覧", users_show_path(current_user) %>
-          <%= link_to "設定", edit_user_registration_path %>
+          <%= link_to "設定", users_account_path %>
           <%= link_to " ログアウト", destroy_user_session_path, method: :delete %>
-          <%= current_user.name %>  
+          <span><%= current_user.name %></span>
           <% if current_user.image.attached? %>
             <%= image_tag current_user.image, class:"header_user_img", alt:"プロフィール画像" %>
           <% else %>
               <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon.jpg", class:"header_user_img", alt:"プロフィール画像"  %>
           <% end %>  
         <% else %>
-          <%= link_to "ログイン", new_user_session_path %>
-          <%= link_to "新規登録", new_user_registration_path %>
+          <%= link_to "ログイン", new_user_session_path, class:"btn btn-primary" %>
+          <%= link_to "登録する", new_user_registration_path, class:"btn btn-secondary" %>
         <% end %> 
       </div>
     </header>
