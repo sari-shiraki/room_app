@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   get 'reservations/index'
   get '/reservations', to:'reservations#index'
 
-
   get 'reservations/:id', to: 'reservations#show', as: 'reservations_show'
+  post 'reservations/:id', to: 'reservations#create'
+
 
   get 'rooms/index'
   get '/rooms', to: 'rooms#index'
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
   post 'rooms/new', to: 'rooms#create'
 
   get 'rooms/:id', to: 'rooms#show', as: 'room'
-  post 'rooms/:id', to: 'reservations#create'
+  post 'rooms/:id', to: 'reservations#confirm'
 
   get 'users/index'
   get '/users', to: 'users#index'

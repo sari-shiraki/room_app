@@ -5,11 +5,22 @@ class ReservationsController < ApplicationController
     @reservations = Reservation.all
   end
   
+  def confirm
+    @reservation = Reservation.new(reservation_params)
+    @dates_of_reservation = (@reservation.finish_date - @reservation.start_date).to_i
+    @reservation.room = Room.find(params[:id])
+    if @reservation.invalid?
+      render template: 'rooms/show'
+    end  
+  end  
+  
   def create
     @room = Room.find(params[:id])
     @reservation = Reservation.new(reservation_params)
     @reservation.room = @room
-    if @reservation.save
+    if params[:back]
+      render template: 'rooms/show'
+    elsif @reservation.save
       redirect_to reservations_show_path(@reservation.id)
     else
       render template: 'rooms/show'
@@ -18,7 +29,9 @@ class ReservationsController < ApplicationController
 
   def show
     @reservation = Reservation.find(params[:id])
+    @dates_of_reservation = (@reservation.finish_date - @reservation.start_date).to_i
   end
+  
   
   private
   def reservation_params

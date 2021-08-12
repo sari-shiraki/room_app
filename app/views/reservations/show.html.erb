@@ -1,18 +1,31 @@
-<h1>Reservations#show</h1>
-<div>
-  <p>*********************************************</p>
-  <p>ルームid：<%= @reservation.room.id %></p>
-  <p>ルーム名：<%= @reservation.room.room_name %></p>
-  <p>ルーム紹介：<%= @reservation.room.room_introduction %></p>
-  <p>料金：<%= @reservation.room.price %></p>
-  <p>住所：<%= @reservation.room.adress %></p>
-  <p>*********************************************</p>
-</div>
-<div>
-  <p>=======================================</p>
-  <p>予約id：<%= @reservation.id %></p>
-  <p>開始日：<%= @reservation.start_date %></p>
-  <p>終了日<%= @reservation.finish_date %></p>
-  <p>人数：<%= @reservation.number_of_people %></p>
-  <p>=======================================</p>
+<div class="container pages">
+  <div class="reservation_field">
+		<div class="row underline">
+			<h3>予約確定</h3>
+    </div>
+		<div class="row underline">
+			<div class="col-sm-4">
+				<label for="room_name">予約した部屋</label>
+			</div>	
+			<p class="col-sm-8"><%= @reservation.room.room_name %></p>
+    </div>
+		<div class="row underline">
+			<div class="col-sm-4">
+				<label for="start_date">開始日</label>
+			</div>	
+			<p class="col-sm-8"><%= @reservation.start_date.strftime('%Y年%m月%d日') %></p>
+    </div>
+		<div class="row underline">
+			<div class="col-sm-4">
+				<label for="finish_date">終了日</label>
+			</div>	
+			<p class="col-sm-8"><%= @reservation.finish_date.strftime('%Y年%m月%d日') %></p>
+    </div>
+		<div class="row underline">
+			<div class="col-sm-4">
+				<label for="price">価格</label>
+			</div>	
+			<p class="col-sm-8"><%= @reservation.room.price %>円</p>
+    </div>
+  </div>
 </div>
