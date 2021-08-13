@@ -32,6 +32,14 @@ a:hover {
   text-decoration: none;
   color: #333333;
 }
+
+.flash_notice {
+  background-color: #add8e6;
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+  display: inline-block;
+}
  
 header {
  display: flex;

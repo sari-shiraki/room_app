@@ -1,3 +1,4 @@
+<span class="flash_notice"><%= flash[:notice] %></span>
 <div class="row">
   <div class="col-sm-2 side_bar">
   	<%= link_to "アカウント", users_account_path, class:"side_bar_black pages" %>
@@ -14,7 +15,7 @@
             <% if current_user.image.attached? %>
               <%= image_tag current_user.image, class:"profile_img" %>
             <% else %> 
-              <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon.jpg" %>
+              <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon.jpg", class:"profile_img" %>
             <% end %>  
   				</div>
   				<div class="row under_line">

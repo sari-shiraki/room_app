@@ -4,7 +4,7 @@
   </div>
   <div class="col-sm-10 pages">
   	<div class="container input_form_field">
-			<%= @msg %>
+			<%= render "shared/error", obj: @room %>
 			<%= form_for(@room, url:{controller:'rooms', action:'create'}) do |form| %>
 				<div class="input_form">
 					<div class="row under_line">

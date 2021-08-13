@@ -1,3 +1,4 @@
+<span class="flash_notice"><%= flash[:notice] %></span>
 <div class="container pages">
   <div class="row room_about_page">
     
@@ -25,6 +26,7 @@
     
     <div class="col-4">
       <div class="reservation_form_field">
+        <%= render "shared/error", obj: @reservation %>
         <p>¥<%= @room.price %>/日</p>
         <%= form_for(@reservation, url:{controller: 'reservations', action: 'confirm'}) do |form| %>
           <div class="reservation_form">

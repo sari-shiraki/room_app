@@ -12,9 +12,9 @@ class RoomsController < ApplicationController
     @room = Room.new(room_params)
     @room.user = current_user
     if @room.save
+      flash[:notice] = "Room was successfully created."
       redirect_to @room
     else
-      @msg = "入力に問題があります"
       render 'new'
     end
   end
