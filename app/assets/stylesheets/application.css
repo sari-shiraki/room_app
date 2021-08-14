@@ -84,6 +84,21 @@ header {
   color: #ffffff;
 }
 
+.header_input {
+  position: relative;
+}
+.fas.fa-search {
+  position: absolute;
+  top: 28px;
+  left: 405px;
+}
+
+.fas.fa-map-marker-alt {
+  position: absolute;
+  top: 28px;
+  left: 228px;
+}
+
 /* js */
 
 
@@ -103,7 +118,7 @@ header {
 }
 
 #nav ul {
-  padding: 28px;
+  padding: 15px;
 }
 
 #nav ul li {
