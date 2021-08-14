@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
  
 img {
   width: 200px;
@@ -33,6 +34,10 @@ a:hover {
   color: #333333;
 }
 
+ul, li {
+  list-style: none;
+}
+
 .flash_notice {
   background-color: #add8e6;
   text-align: center;
@@ -40,11 +45,12 @@ a:hover {
   width: 100%;
   display: inline-block;
 }
- 
+
+/*header*/
 header {
  display: flex;
  background-color: #000000;
- padding: 10px 0;
+ padding: 10px 20px;
 }
 
 .header_user_img {
@@ -69,14 +75,43 @@ header {
   margin-top: 10px;
 }
 
-.header_user > p {
+.header_user {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.header_user > span {
   color: #ffffff;
 }
 
-.header_menus {
-  margin: 0 20px 0 auto;
+/* js */
+
+
+#nav {
+  background-color: #ffffff;
+  width: 200px;
+  margin-left: auto;
+  margin-right: 0;
+  z-index: 9999;
+  position: absolute;
+  right: 0;
+  display: none;
 }
 
+.show {
+  display: block;
+}
+
+#nav ul {
+  padding: 28px;
+}
+
+#nav ul li {
+  margin-bottom: 5px;
+}
+
+
+/*footer*/
 footer {
   background-color: #000000;
   padding: 80px 0;
