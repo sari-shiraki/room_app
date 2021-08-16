@@ -10,6 +10,15 @@
 
 .field.sign_form {
   margin-top: 20px;
+  display: flex;
+}
+
+.field.sign_form.edit {
+  display: block;
+}
+
+.field.sign_form input {
+  margin-left: 15px;
 }
 
 .sign_field {
@@ -35,8 +44,12 @@
   text-align: center;
 }
 
-.user_container {
-  padding: 110px 0;
+.profile_container {
+  margin-top: -25px;
+}
+
+span.btn.btn-danger.btn-sm.disabled {
+  width: 50px;
 }
 
 /* profile */

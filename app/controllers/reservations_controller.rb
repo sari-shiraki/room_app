@@ -1,15 +1,16 @@
 class ReservationsController < ApplicationController
-    before_action :authenticate_user!, only: [:index, :create]
+    before_action :authenticate_user!, only: [:index, :create, :confirm]
   
   def index
     @reservations = Reservation.all
   end
   
   def confirm
+    @room = Room.find(params[:id])
     @reservation = Reservation.new(reservation_params)
-    @reservation.room = Room.find(params[:id])
+    @reservation.room = @room
     if @reservation.invalid?
-      redirect_to template: 'rooms/show'
+      render template: 'rooms/show'
     else  
       @dates_of_reservation = (@reservation.finish_date - @reservation.start_date).to_i
     end  

@@ -3,6 +3,8 @@ gem 'ransack'
 gem 'bootsnap', require: false
 gem 'pry-rails'
 gem 'devise'
+gem 'rails-i18n'
+gem 'devise-i18n'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 #gem 'rails', '~> 5.0.0'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.2'

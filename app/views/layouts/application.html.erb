@@ -16,8 +16,8 @@
       </div>
       <div class="header_search">
         <%= search_form_for @q, url: search_path do |f| %>
-          <%= f.search_field :adress_cont, placeholder:"      東京" %>
-          <%= f.search_field :room_name_or_room_introduction_or_price_or_adress_cont, placeholder:"     キーワード",class:"header_input" %>
+          <%= f.search_field :adress_cont, placeholder:"東京" %>
+          <%= f.search_field :room_name_or_room_introduction_or_price_or_adress_cont, placeholder:"キーワード",class:"header_input" %>
           <i class="fas fa-map-marker-alt"></i>
           <i class="fas fa-search"></i>
           <%= f.submit '探す',class:"search_btn" %>

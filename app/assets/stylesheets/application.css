@@ -90,13 +90,13 @@ header {
 .fas.fa-search {
   position: absolute;
   top: 28px;
-  left: 405px;
+  left: 540px;
 }
 
 .fas.fa-map-marker-alt {
   position: absolute;
   top: 28px;
-  left: 228px;
+  left: 365px;
 }
 
 /* js */
@@ -156,4 +156,22 @@ footer > p {
 .col > .room_imgs {
   width: 300px;
   height: 200px;
+}
+
+.ajust_container {
+  padding: 110px 0;
+}
+
+
+/* error */
+.field_with_errors input {
+  width: 100%;
+}
+
+.field_with_errors {
+  width: 100%;
+}
+
+.row.under_line {
+  flex-wrap: nowrap;
 }

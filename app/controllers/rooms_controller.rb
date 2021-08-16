@@ -1,9 +1,5 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  def index
-    @rooms = Room.all
-  end
-
   def new
     @room = Room.new
   end
