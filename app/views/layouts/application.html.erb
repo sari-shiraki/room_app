@@ -3,12 +3,54 @@
   <head>
     <title>RoomApp</title>
     <%= csrf_meta_tags %>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   </head>
 
   <body>
+    <header>
+      <div class="header_logo">
+        <a href="/"><img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"></a>
+      </div>
+      <div class="header_search">
+        <%= search_form_for @q, url: search_path do |f| %>
+          <%= f.search_field :adress_cont, placeholder:"東京" %>
+          <%= f.search_field :room_name_or_room_introduction_or_price_or_adress_cont, placeholder:"キーワード",class:"header_input" %>
+          <i class="fas fa-map-marker-alt"></i>
+          <i class="fas fa-search"></i>
+          <%= f.submit '探す',class:"search_btn" %>
+        <% end %> 
+      </div>
+      <div class="header_user">
+        <% if user_signed_in? %>
+          <span><%= current_user.name %></span>
+          <% if current_user.image.attached? %>
+            <%= image_tag current_user.image, class:"header_user_img", alt:"プロフィール画像" %>
+          <% else %>
+              <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon.jpg", class:"header_user_img", alt:"プロフィール画像"  %>
+          <% end %> 
+        <% else %>
+          <%= link_to "ログイン", new_user_session_path, class:"btn btn-primary" %>
+          <%= link_to "登録する", new_user_registration_path, class:"btn btn-secondary" %>
+        <% end %> 
+      </div>
+    </header>
+    <%= render "shared/headernav" %>
     <%= yield %>
+    <footer>
+      <p>© 2020 POTEPAN.INC.</p>
+    </footer>
+     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+     <script>
+       'user strict';
+       
+       $(document).ready(function(){
+         $('.header_user_img').on('click', function(){
+           $('#nav').toggle();
+         });
+       });
+     </script>
   </body>
 </html>

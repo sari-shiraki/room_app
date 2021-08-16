@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-sm-2 side_bar">
+  	<%= link_to "アカウント", users_account_path, class:"side_bar_contents" %>
+  	<%= link_to "プロフィール", users_profile_path, class:"side_bar_black" %>
+  </div>
+  <div class="col-sm-10 pages ajust_container">
+  	<div class="container input_form_field">
+			<div class="input_form">
+				<div class="row under_line">
+					<h3 class="col-sm-4">アカウント</h3>
+				</div>
+				<div class="row under_line">
+					<div class="col-sm-4">
+						<label for="email">メールアドレス</label>
+					</div>
+					<p class="col-sm-8"><%= @user.email %></p>
+				</div>
+				<div class="row under_line">
+					<div class="col-sm-4">
+						<label for="password">パスワード</label>
+					</div>
+					<p class="col-sm-8">*********</p>
+				</div>
+        <%= link_to  "編集", edit_user_registration_path, class:"btn btn-primary input_submit col-sm-4" %>
+			</div>	
+  	</div>
+  </div>
+</div>	
+		
+		

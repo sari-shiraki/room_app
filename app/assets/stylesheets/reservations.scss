@@ -1,0 +1,75 @@
+// Place all the styles related to the reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.table tbody tr td {
+  vertical-align: middle;
+}
+
+.table tbody tr td  p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4b8fe2;
+  text-decoration: underline;
+}
+
+.table tbody tr .room_reservation_info  > p {
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: normal;
+  color: #333333;
+}
+
+.table th.room_introduction {
+  width: 200px;
+}  
+
+.reservations_room_img {
+  width: 230px;
+  height: auto;
+}
+
+/*.resercation confirm */
+
+
+
+.confirm_field {
+  border: 1px solid #e9ecef;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.confirm_contents {
+  background-color: #e9ecef;
+  padding: 15px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #ced4d9;
+}
+
+.confirm_form span {
+  font-weight: bold;
+}
+
+.underline {
+  border-bottom: 1px solid #e2e2e2;
+  padding: 5px 0;
+  margin-bottom: 5px;
+}
+
+.confirm.underline p {
+  margin-top: 5px;
+}
+
+/* reservation 確定画面 */
+
+.row.underline > h3 {
+  color: #4b8fe2;
+}
+
+.reservation_field {
+  border: 1px solid #e2e2e2;
+  width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}

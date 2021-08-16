@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+  <nav id ="nav" class="show">
+    <ul>
+      <li><%= link_to "ルーム登録", rooms_new_path %></li>
+      <li><%= link_to "予約済みルーム一覧", reservations_path %></li>
+      <li><%= link_to "登録済みルーム一覧", users_show_path(current_user) %></li>
+      <li><%= link_to "設定", users_account_path %></li>
+      <li><%= link_to " ログアウト", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  </nav>
+<% end %> 
